@@ -28,20 +28,6 @@ namespace Net.Core.Web
 
             app.UseRouting();
 
-            app.Use(async (context, next) =>
-            {
-                await context.Response.WriteAsync("How are you?");
-                if (context.Request.Path.Value.Contains("/fede"))
-                {
-                    await next();
-                }
-            });
-
-            app.Run(async context =>
-            {
-                await context.Response.WriteAsync(" I'm fede");
-            });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>

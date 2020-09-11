@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace NetCoreProject
+namespace Net.Core.Web
 {
     public class Startup
     {
@@ -40,14 +39,14 @@ namespace NetCoreProject
 
             app.Run(async context =>
             {
-                await context.Response.WriteAsync("I'm fede");
+                await context.Response.WriteAsync(" I'm fede");
             });
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello ASP .NET!");
+                    await context.Response.WriteAsync("Hello World!");
                 });
             });
         }
